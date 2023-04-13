@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  springdb:
+    image: mysql:5.7
+    restart: always
+    container_name: springdb
+    environment:
+      MYSQL_DATABASE: 'spring'
+      MYSQL_USER: 'spring'
+      MYSQL_PASSWORD: 'spring'
+      MYSQL_ROOT_PASSWORD: 'spring'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - dbvol:/var/lib/mysql
+volumes:
+  dbvol:
