@@ -27,7 +27,7 @@ public class AnimeService {
   }
   public Anime findOne(long id) {
     return animeRepository.findById(id)
-        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_GATEWAY, "NOT FOUND ANIME BY ID: " + id));
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "NOT FOUND ANIME BY ID: " + id));
   }
 
   public Anime save(Anime anime) {
